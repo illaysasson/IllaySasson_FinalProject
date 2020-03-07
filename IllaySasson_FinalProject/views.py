@@ -39,6 +39,8 @@ from IllaySasson_FinalProject.models.QueryFormStructure import UserRegistrationF
 db_Functions = create_LocalDatabaseServiceRoutines() 
 mutualtitle = 'Happiness & The Internet'
 
+app.config['SECRET_KEY'] = '2212'
+
 @app.route('/')
 @app.route('/home')
 def home():
@@ -82,7 +84,7 @@ def data_model():
 @app.route('/data_internet_users')
 def data_internet_users():
 
-    dffull = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\internet_users.csv'))
+    dffull = pd.read_csv(path.join(path.dirname(__file__), 'static/data/internet_users.csv'))
     df = dffull[['Country or Area', 'Population', 'Population Rank', 'Internet Users', 'Percentage', 'Internet Users Rank']]
     df.sort_values(by='Country or Area', inplace=True, ascending=True)
     
@@ -97,7 +99,7 @@ def data_internet_users():
 @app.route('/data_suicide_rates')
 def data_suicide_rates():
 
-    dffull = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\suicide_rates.csv'))
+    dffull = pd.read_csv(path.join(path.dirname(__file__), 'static/data/suicide_rates.csv'))
     df = dffull[['Country', 'Sex', 'Suicides/100k Population']]
     df = df[df.Sex != 'Both sexes']
     df.sort_values(by='Country', inplace=True, ascending=True)
@@ -113,7 +115,7 @@ def data_suicide_rates():
 @app.route('/data_wpr')
 def data_wpr():
 
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\wpr.csv'))
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/wpr.csv'))
     df = df.drop(['Lower Confidence Interval', 'Upper Confidence Interval'], axis=1)
     
     raw_data_table = df.to_html(classes = 'table table-hover')
