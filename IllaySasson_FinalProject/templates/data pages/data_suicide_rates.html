@@ -1,0 +1,52 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="pageCenter">
+
+    <h1><b>{{ title }}</b></h1>
+        <h3><u>Suicide Rates</u></h3>
+
+    <br />
+    <p>
+        Suicide Rates in 2016 is a dataset that includes information about the amount of people that committed suicide in the year 2016. This dataset helps understand the impact of the internet
+        on people's happiness, and whether or not the internet contributes to suicides around the world. The suicides are calculated per 100k people - meaning instead of the amount of people
+        that committed suicide in total in the year 2016, it shows how much people out of 100,000 people have committed suicides. In the year 2016, Russia had the largest amount of male suicides
+        out of 100k people - 48.3 suicides in total. In contrast, Moroco had 2.5 suicides out of 100k people in 2016, which is the smallest amount out of every country. Israel had 8.2 male
+        suicides and 2.4 female suicides in 2016. The data was taken directly from <a href="https://who.int/en" class="externalLink">WHO - The World Health Organization</a>.
+    </p>
+
+    <br />
+
+    <div class="divTable" id="divDataFields">
+        <div class="divRow" id="divHeader">
+            <div class="divCell">Column</div>
+            <div class="divCell">Explanation</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Country</div>
+            <div class="divCell">Name of the country</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Sex</div>
+            <div class="divCell">Sex of the deceased people - Male/Female</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Suicides/100k Population</div>
+            <div class="divCell">How much people out of 100,000 committed suicide</div>
+        </div>
+    </div>
+
+    <button data-target="#collapse" data-toggle="collapse" class="btn btn-default" id="buttonDataset">Dataset</button>
+
+    <div id="collapse" class="collapse">
+        {{ raw_data_table | safe}}
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,144 @@
+/*CSS EDITS MADE BY ILLAY SASSON - PROJECT OWNER*/
+
+.rtl-text {
+    direction: rtl;
+}
+.pageCenter {
+    text-align: center;
+    font-size: 14px;
+}
+
+.externalLink {
+    text-decoration: none;
+    color: #999999;
+}
+
+.externalLink:hover {
+    color: black;
+}
+
+.dataButton {
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #9395b599;
+    border-right: 2px solid #666666;
+    transition-duration: 0.4s;
+}
+
+    .dataButton a {
+        color: black;
+        display: block;
+    }
+
+    .dataButton:hover a {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+    }
+
+    .dataButton:hover {
+        background-color: #696A82;
+    }
+
+.divTable {
+    display: table;
+    width: auto;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divRow {
+    display: table-row;
+    width: auto;
+    clear: both;
+
+}
+
+#divDataFields .divCell:last-child {
+    width: 500px;
+}
+
+.divCell {
+    float: left;
+    display: table-column;
+    width: 300px;
+    height: 80px;
+    border: 2px solid #666666;
+    border-bottom: none;
+    border-right: none;
+    padding: 5px;
+    line-height: 66px;
+}
+
+#dataModelCell {
+    width: 300px;
+    height: 180px;
+    line-height: 1.6;
+
+}
+
+#centerDiv {
+    line-height: 168px;
+    height:180px;
+}
+
+
+#buttonDataset {
+    margin: 10px 0px;
+    font-size: 18px;
+    border-width: 3px;
+}
+
+.divCell:first-child {
+    background-color: #a1afc499;
+}
+
+#divHeader .divCell {
+    background-color: #9395b599;
+}
+
+.dataPhotoalbum table {
+    border-collapse: separate;
+}
+
+.dataPhotoalbum tr th {
+    border-collapse: separate;
+    padding: 5px;
+    border: double 3px black;
+    border-radius: 3px;
+}
+
+#myNavbar {
+    background-color: #1e3c6e;
+}
+
+#myNavbar a {
+    color: white;
+}
+
+#myNavbar a:hover {
+    color: #7393c7
+}
+
+#myButton {
+    background-color: #1e3c6e;
+    color: white;
+}
+
+#myButton:hover {
+    background-color: #091b3b;
+    color: white;
+}
+
+/*Fix double borders bug*/
+.divRow:last-child {
+    border-bottom: 2px solid #666666;
+}
+
+.divCell:last-child {
+    border-right: 2px solid #666666;
+}
+
+/*REST IS FLASK DEFAULT*/
