@@ -35,6 +35,8 @@ from wtforms import ValidationError
 
 from IllaySasson_FinalProject.models.QueryFormStructure import LoginFormStructure 
 from IllaySasson_FinalProject.models.QueryFormStructure import UserRegistrationFormStructure 
+from IllaySasson_FinalProject.models.QueryFormStructure import QueryFormStructure 
+
 
 db_Functions = create_LocalDatabaseServiceRoutines() 
 mutualtitle = 'Happiness & The Internet'
@@ -127,19 +129,52 @@ def data_wpr():
         )
 
 
+@app.route('/data_query', methods=['GET', 'POST'])
+def data_query():
+
+    country = None
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/wpr.csv'))
+    df = df.drop(['Lower Confidence Interval', 'Upper Confidence Interval'], axis=1)
+
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+    form = QueryFormStructure(request.form)
+     
+    if (request.method == 'POST' ):
+        country = form.Country.data
+        df = df.set_index(['Country'])
+        if (country == ''):
+            raw_data_table = raw_data_table
+        elif (country in df.index):
+            df = df.loc[[country]]
+        else:
+            flash('Some fields are invalid.')
+        form.Country.data = ''
+
+    return render_template('data_query.html', 
+            form = form, 
+            raw_data_table = df.to_html(classes = 'table table-hover'),
+            title=mutualtitle + ' - Data Model',
+            year=datetime.now().year,
+        )
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = UserRegistrationFormStructure(request.form)
 
-    if (request.method == 'POST' and form.validate()):
-        if (not db_Functions.IsUserExist(form.username.data)):
-            db_Functions.AddNewUser(form)
-            db_table = ""
+    if (request.method == 'POST'):
+        if form.validate():
+            if (not db_Functions.IsUserExist(form.username.data)):
+                db_Functions.AddNewUser(form)
+                db_table = ""
 
-            flash('Welcome '+ form.FirstName.data + " " + form.LastName.data + "!")
+                flash('Welcome '+ form.FirstName.data + " " + form.LastName.data + "!")
+            else:
+                flash('Error: User ' + form.username.data + ' already exists.')
+                form = UserRegistrationFormStructure(request.form)
         else:
-            flash('Error: User ' + form.username.data + ' already exists.')
-            form = UserRegistrationFormStructure(request.form)
+            flash('Some fields are invalid.')
 
     return render_template(
         'register.html', 
@@ -156,7 +191,7 @@ def login():
 
     if (request.method == 'POST' and form.validate()):
         if (db_Functions.IsLoginGood(form.username.data, form.password.data)):
-            flash('Login successful!'),
+            return redirect('data_query')
         else:
             flash('Incorrect username and/or password.')
    
@@ -167,6 +202,5 @@ def login():
         year=datetime.now().year,
         repository_name='Pandas',
         )
-
 
 

@@ -1,4 +1,3 @@
-EmailAddr,FirstName,LastName,password,username
-illaysasson5@gmail.com,Illay,Sasson,Illay2004,illaysas
-test,test,test,test,test
-a,a,a,a,a
+FirstName,LastName,Gender,EmailAddr,username,password
+test,test,O,test@gmail.com,test,test
+Illay,Sasson,M,illaysasson5@gmail.com,illaysas,Illay2004

@@ -65,6 +65,7 @@
     <Content Include="IllaySasson_FinalProject\static\images\python.png" />
     <Content Include="IllaySasson_FinalProject\static\images\social_media.png" />
     <Content Include="IllaySasson_FinalProject\templates\data pages\data_internet_users.html" />
+    <Content Include="IllaySasson_FinalProject\templates\data_query.html" />
     <Content Include="IllaySasson_FinalProject\templates\data pages\data_suicide_rates.html" />
     <Content Include="IllaySasson_FinalProject\templates\data pages\data_wpr.html" />
     <Content Include="IllaySasson_FinalProject\templates\data_model.html" />
