@@ -5,8 +5,6 @@
     <div class="pageCenter">
 
         <h1><b>{{ title }}</b></h1>
-        <h3><u>World Happiness Report 2016 - Query</u></h3>
-
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
         {% for message in messages %}
@@ -16,36 +14,53 @@
         {% endif %}
         {% endwith %}
 
+        <br />
+        <p>
+            The Data Query page gives you the option to select countries and compare their happiness and percentage of internet users in the population using 2 bar plots with a shared Y axis.
+        </p>
+
+        <br />
+
         <form method=post>
             {{ form.csrf }}
             {{ form.csrf_token }}
             <table>
                 <tr>
                     <td>
-                        {{ form.Country.label }}
+                        {{ form.countries.label }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ form.countries }}
                     </td>
                     <td>
-                        {{ form.Country }}
-                    </td>
-                    <td>
-                        {% if form.Country.errors %}
-                        <ul>{% for error in form.Country.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+                        {% if form.countries.errors %}
+                        <ul>{% for error in form.countries.errors %}<li>{{ error }}</li>{% endfor %}</ul>
                         {% endif %}
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>
                         <div class="input submit">
                             <input type="submit" value="Submit">
                         </div>
                     <td>
-                    <td></td>
                 </tr>
             </table>
         </form>
 
-        {{ raw_data_table | safe}}
+        <img src={{ fig_image }} class="img-thumbnail" alt="not found">
+
+        <br />
+        <br />
+        <br />
+
+        <button data-target="#collapse" data-toggle="collapse" class="btn btn-default" id="buttonDataset">Dataset</button>
+
+        <div id="collapse" class="collapse">
+            {{ raw_data_table | safe}}
+        </div>
 
     </div>
 

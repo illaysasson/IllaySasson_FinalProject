@@ -28,6 +28,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IllaySasson_FinalProject\models\DataQuery.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="IllaySasson_FinalProject\models\LocalDatabaseRoutines.py">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +67,7 @@
     <Content Include="IllaySasson_FinalProject\static\images\pandas.jpeg" />
     <Content Include="IllaySasson_FinalProject\static\images\python.png" />
     <Content Include="IllaySasson_FinalProject\static\images\social_media.png" />
+    <Content Include="IllaySasson_FinalProject\static\images\waitingforinput.png" />
     <Content Include="IllaySasson_FinalProject\templates\data pages\data_internet_users.html" />
     <Content Include="IllaySasson_FinalProject\templates\data_query.html" />
     <Content Include="IllaySasson_FinalProject\templates\data pages\data_suicide_rates.html" />

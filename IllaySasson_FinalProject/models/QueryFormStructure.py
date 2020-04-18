@@ -7,17 +7,15 @@ from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms import Form, BooleanField, PasswordField
-from wtforms import TextField, TextAreaField, SelectField, DateField
+from wtforms import TextField, TextAreaField, SelectField, DateField, SelectMultipleField
 from wtforms import validators, ValidationError 
 
 from wtforms.validators import DataRequired, Email, Length
 ### ----------------------------------------------------------- ###
 
 class QueryFormStructure(FlaskForm):
-    Country   = StringField('Country:  ')
-    Region   = StringField('Region:  ')
-    Rank   = StringField('Rank:  ')
-    Submit = SubmitField('Submit')
+    countries = SelectMultipleField('Select Multiple:' , validators = [DataRequired] )
+    submit = SubmitField('Submit')
 
 class LoginFormStructure(FlaskForm):
     username   = StringField('Username:  ' , validators = [DataRequired('Username Required.')])
@@ -33,3 +31,4 @@ class UserRegistrationFormStructure(FlaskForm):
     username   = StringField('Username:  ' , validators = [DataRequired('Username Required.')])
     password   = PasswordField('Password:  ' , validators = [DataRequired('Password Required.'), Length(min=5, message='Password must be more than 5 characters.')])
     submit = SubmitField('Submit')
+
