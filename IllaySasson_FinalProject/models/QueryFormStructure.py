@@ -15,6 +15,7 @@ from wtforms.validators import DataRequired, Email, Length
 
 class QueryFormStructure(FlaskForm):
     countries = SelectMultipleField('Select Multiple:' , validators = [DataRequired] )
+    sortby = SelectField('Sort by', choices = [('Happiness Score', 'Happiness Score'), ('% of Internet Users', '% of Internet Users')])
     submit = SubmitField('Submit')
 
 class LoginFormStructure(FlaskForm):

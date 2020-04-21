@@ -165,6 +165,7 @@ def data_query():
 
 		#Gets the user's parameters for the query
 		countries = form.countries.data
+		sortby = form.sortby.data
 
 		#Creates 2 empty lists for the percentage & happiness parameters
 		percentage = []
@@ -178,11 +179,15 @@ def data_query():
 		for x in countries:
 			happiness.append(df.loc[df['Country'] == x]['Happiness Score'].values[0])
 
-		#Orders the happiness list from small to large
-		index = np.argsort(happiness)
-		happiness = np.array(happiness)[index]
+		#Sorts the happiness score	/	percentage of internet users from large to small, depending on what the user chose
+		if sortby == "% of Internet Users":
+		    index = np.argsort(percentage)
+		else:
+			index = np.argsort(happiness)
+		
 
-		#All the lists then are ordered so the percentage and country will match the happienss score and they all will share the same index.
+		#All the lists then are ordered so the countries, happiness and percentage will all share the same index
+		happiness = np.array(happiness)[index]
 		countries = np.array(countries)[index]
 		percentage = np.array(percentage)[index]
 
@@ -198,8 +203,8 @@ def data_query():
 			fig, axes = plt.subplots(ncols=2, sharey=True, figsize=[8, 22])
 			
 		#Defines 2 X axes that share the same Y axis
-		axes[0].barh(countries, happiness, align='center', color='#de8071', zorder=10)
-		axes[1].barh(countries, percentage, align='center', color='#5675d1', zorder=10)
+		axes[0].barh(countries, happiness, align='center', color='#ed6255', zorder=10)
+		axes[1].barh(countries, percentage, align='center', color='#6473e8', zorder=10)
 
 		#Inverts the left x axis so both axes will start from the center
 		axes[0].invert_xaxis()
