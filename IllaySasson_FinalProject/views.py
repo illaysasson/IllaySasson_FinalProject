@@ -170,8 +170,8 @@ def data_query():
 	#Merges the WPR and Internet Users datasets (Only includes countries that are present in both datasets)
 	df = MergeDatasets(df_wpr, df_iu)
 
-	#Merges the two datasets with the Suicide Rates dataset, sorts it and turns it into a displayable HTML table (Only includes countries that are present in all 3 datasets)
-	full_df = MergeDatasets(df, df_sr)
+	#Merges the two datasets with the Suicide Rates dataset, sorts it and turns it into a displayable HTML table (Displays countries that have no Suicide Rates data)
+	full_df = pd.merge(df, df_sr, how='left', on=['Country'])
 	full_df.sort_values(by='Suicides/100k Population', inplace=True, ascending=True)
 	full_df = full_df.to_html(classes = 'table table-hover')
 
