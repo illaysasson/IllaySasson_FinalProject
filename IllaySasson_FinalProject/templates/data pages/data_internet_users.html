@@ -2,62 +2,63 @@
 
 {% block content %}
 
-    <div class="pageCenter">
+<div class="pageCenter">
 
-        <h1><b>{{ title }}</b></h1>
-        <h3><u>Internet Users</u></h3>
+    <h1><b>{{ title }}</b></h1>
+    <h3><u>Internet Users</u></h3>
 
-        <br />
-        <p>
-            Internet Users is a dataset with information on the number of internet users in countries all around the world. This dataset is crucial to the question
-            "How does the internet affect overall happiness?" because it allows us to see how much a country uses the internet. The dataset has a variety of different information
-            like population, total internet users, and more. While the dataset was made with data from 2018, it is still relevant to my research - 2 years is not a lot of time, and the numbers
-            are relatively the same. The country with the highest percentage of internet users is the Falkland Islands, probably because the population is really low and almost everyone
-            there has phones. The country with the lowest percentage of internet users is Eritrea. Israel is ranked in the 46th place in terms of internet users percentage. The dataset was taken
-            from the website <a href="https://kaggle.com" class="externalLink">kaggle</a> which houses a lot of different interesting datasets.
-        </p>
+    <br />
+    <p>
+        Internet Users is a dataset with information on the number of internet users in countries all around the world. This dataset is crucial to the question
+        "How does the internet affect overall happiness?" because it allows us to see how much a country uses the internet. The dataset has a variety of different information
+        like population, total internet users, and more. While the dataset was made with data from 2018, it is still relevant to my research - 2 years is not a lot of time, and the numbers
+        are relatively the same. The country with the highest percentage of internet users is the Falkland Islands, probably because the population is really low and almost everyone
+        there has phones. The country with the lowest percentage of internet users is Eritrea. Israel is ranked in the 46th place in terms of internet users percentage. The dataset was taken
+        from the website <a href="https://kaggle.com" class="externalLink" target="_blank">kaggle</a> which houses a lot of different interesting datasets.
+    </p>
         
-        <br />
+    <br />
 
-        <div class="divTable" id="divDataFields">
-            <div class="divRow" id="divHeader">
-                <div class="divCell">Column</div>
-                <div class="divCell">Explanation</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Country</div>
-                <div class="divCell">Name of the country</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Population</div>
-                <div class="divCell">The country's total population</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Population Rank</div>
-                <div class="divCell">Rank of the country based on population</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Internet Users</div>
-                <div class="divCell">The amount of people with internet access</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Percentage</div>
-                <div class="divCell">The percentage of people that have internet access</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Rank</div>
-                <div class="divCell">Rank of the country based on internet users</div>
-            </div>
+    <div class="divTable" id="divDataFields">
+        <div class="divRow" id="divHeader">
+            <div class="divCell">Column</div>
+            <div class="divCell">Explanation</div>
         </div>
-
-        <button data-target="#collapse" data-toggle="collapse" class="btn btn-default" id="buttonDataset">Dataset</button>
-
-        <div id="collapse" class="collapse">
-            {{ raw_data_table | safe}}
+        <div class="divRow">
+            <div class="divCell">Country</div>
+            <div class="divCell">Name of the country</div>
         </div>
-
-
-
+        <div class="divRow">
+            <div class="divCell">Population</div>
+            <div class="divCell">The country's total population</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Population Rank</div>
+            <div class="divCell">Rank of the country based on population</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Internet Users</div>
+            <div class="divCell">The amount of people with internet access</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Percentage</div>
+            <div class="divCell">The percentage of people that have internet access</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Rank</div>
+            <div class="divCell">Rank of the country based on internet users</div>
+        </div>
     </div>
+
+    <!--Bootstrap Collapse Button-->
+    <button data-target="#collapse" data-toggle="collapse" class="btn btn-default" id="buttonDataset">Dataset</button>
+
+    <div id="collapse" class="collapse">
+        {{ raw_data_table | safe}}
+    </div>
+
+
+
+</div>
 
 {% endblock %}

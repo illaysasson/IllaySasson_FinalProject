@@ -1,3 +1,7 @@
+### ------------------------------------------------------------ ###
+### --- includes all software packages and libraries needed ---- ###
+### ------------------------------------------------------------ ###
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,6 +14,8 @@ import base64
 import datetime
 import io
 from os import path
+### ----------------------------------------------------------- ###
+
 
 #Turns plot into displayable image
 def PlotToIMG(fig):
@@ -34,7 +40,6 @@ def GetSortedWPR(df):
     df.sort_values(by='Happiness Score', inplace=True, ascending=False)
     return df
 
-
 #Sorts and returns Internet Users dataset
 def GetSortedInternetUsers(df):
     df = df[['Country', 'Percentage']]
@@ -43,8 +48,13 @@ def GetSortedInternetUsers(df):
     df.sort_values(by='Percentage', inplace=True, ascending=False)
     return df
 
+#Sorts and returns Suicide Rates dataset
+def GetSortedSuicideRates(df):
+    df = df[['Country', 'Sex', 'Suicides/100k Population']]
+    df = df.loc[df['Sex'] == 'Both sexes']
+    df = df[['Country', 'Suicides/100k Population']]
+    return df
 
 #Merges datasets and only includes countries that are present in both datasets
 def MergeDatasets(df1, df2):
     return (pd.merge(df1, df2, on=['Country']))
-

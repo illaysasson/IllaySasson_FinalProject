@@ -2,49 +2,49 @@
 
 {% block content %}
 
-	<div class="pageCenter">
+<div class="pageCenter">
 
-		<h1><b>{{ title }}</b></h1>
+	<h1><b>{{ title }}</b></h1>
 
-		<p>
-			In my project I used 3 different datasets - Internet Users in 2018, Suicide Rates in 2016 and The 2016 World Happiness Report. Using all three
-			datasets, I can investigate the impact of the internet on our overall happiness. Does the internet make us happy by allowing us to connect to different
-			people and catch up to the latest news all around the world, or does it hurt us by distracting us from real life and allowing things like cyberbullying
-			and online predators?
-		</p>
+	<p>
+		In my project I used 3 different datasets - Internet Users in 2018, Suicide Rates in 2016 and The 2016 World Happiness Report. Using all three
+		datasets, I can investigate the impact of the internet on our overall happiness. Does the internet make us happy by allowing us to connect to different
+		people and catch up to the latest news all around the world, or does it hurt us by distracting us from real life and allowing things like cyberbullying
+		and online predators?
+	</p>
 
-		<div class="dataPhotoalbum">
-			<table align="center">
-				<tr>
-					<th><img src="../static/images/happyteens.jpeg" width="300" height="200"></th>
-					<th><img src="../static/images/social_media.png" width="300" height="200"></th>
-					<th><img src="../static/images/cyberbullying.jpg" width="300" height="200"></th>
-				</tr>
-			</table>
+	<div class="dataPhotoalbum">
+		<table align="center">
+			<tr>
+				<th><img src="../static/images/happyteens.jpeg" width="300" height="200"></th>
+				<th><img src="../static/images/social_media.png" width="300" height="200"></th>
+				<th><img src="../static/images/cyberbullying.jpg" width="300" height="200"></th>
+			</tr>
+		</table>
+	</div>
+
+	<br />
+
+	<div class="divTable">
+		<div class="divRow">
+			<div class="divCell" id="centerDiv">Internet Users</div>
+			<div class="divCell" id="dataModelCell" style="padding-top: 23px;">Includes information about the number of internet users in a country.
+			This information includes the total amount of internet users, the percentage of the population with access to internet and ranking of the country based on total internet users.</div>
+			<div class="dataButton divCell" id="centerDiv"><a href="{{ url_for('data_internet_users') }}">Dataset Link</a></div>
 		</div>
-
-		<br />
-
-		<div class="divTable">
-			<div class="divRow">
-				<div class="divCell" id="centerDiv">Internet Users</div>
-				<div class="divCell" id="dataModelCell" style="padding-top: 23px;">Includes information about the number of internet users in a country.
-				This information includes the total amount of internet users, the percentage of the population with access to internet and ranking of the country based on total internet users.</div>
-				<div class="dataButton divCell" id="centerDiv"><a href="{{ url_for('data_internet_users') }}">Dataset Link</a></div>
-			</div>
-			<div class="divRow">
-				<div class="divCell" id="centerDiv">The World Happiness Report</div>
-				<div class="divCell" id="dataModelCell" style="padding-top: 10px; ">Includes information about a country's happiness score in the year 2016. The happiness score is built from
-				different variables, that were collected from a survey that was answered around the world, with different questions about the person's happiness in their current country.</div>
-				<div class="dataButton divCell" id="centerDiv"><a href="{{ url_for('data_wpr') }}">Dataset Link</a></div>
-			</div>
-			<div class="divRow">
-				<div class="divCell" id="centerDiv">Suicide Rates</div>
-				<div class="divCell" id="dataModelCell" style="padding-top: 30px;">Includes the amount of people that committed suicide out of 100k people in the year 2016, for males and females
-				separately. The data is taken directly from the World Health Organization, which makes it very reliable.</div>
-				<div class="dataButton divCell" id="centerDiv"><a href="{{ url_for('data_suicide_rates') }}">Dataset Link</a></div>
-			</div>
+		<div class="divRow">
+			<div class="divCell" id="centerDiv">The World Happiness Report</div>
+			<div class="divCell" id="dataModelCell" style="padding-top: 10px; ">Includes information about a country's happiness score in the year 2016. The happiness score is built from
+			different variables, that were collected from a survey that was answered around the world, with different questions about the person's happiness in their current country.</div>
+			<div class="dataButton divCell" id="centerDiv"><a href="{{ url_for('data_wpr') }}">Dataset Link</a></div>
+		</div>
+		<div class="divRow">
+			<div class="divCell" id="centerDiv">Suicide Rates</div>
+			<div class="divCell" id="dataModelCell" style="padding-top: 30px;">Includes the amount of people that committed suicide out of 100k people in the year 2016, for males and females
+			separately. The data is taken directly from the World Health Organization, which makes it very reliable.</div>
+			<div class="dataButton divCell" id="centerDiv"><a href="{{ url_for('data_suicide_rates') }}">Dataset Link</a></div>
 		</div>
 	</div>
+</div>
 
 {% endblock %}

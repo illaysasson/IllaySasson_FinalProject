@@ -2,87 +2,87 @@
 
 {% block content %}
 
-    <div class="pageCenter">
+<div class="pageCenter">
 
-        <h1><b>{{ title }}</b></h1>
-        <h3><u>World Happiness Report</u></h3>
+    <h1><b>{{ title }}</b></h1>
+    <h3><u>World Happiness Report</u></h3>
 
-        <br />
-        <p >
-            The World Happiness Report is a dataset that includes information about a
-            country's happiness in a certain year (In this case 2016). This dataset is the main way
-            to see how does the internet affect the world happiness. The happiness score is built from
-            seven variables: Economy, Social Support, Health, Freedom, Trust, Generosity and Dystopia Residual.
-            In the year 2016, The happiest country in the world is Denmark, and the least happy one is Burundi.
-            Fun fact: Israel is ranked in the 11th spot, which is above countries like the UK, the United States,
-            and a lot more. I took the dataset from the website <a href="https://kaggle.com" class="externalLink">kaggle</a>, but the data
-            is originally from <a href="https://worldhappiness.report" class="externalLink">The World Happiness Report </a> website, where
-            you can find a lot more information about how the data was collected and different Happiness Reports from previous years.
+    <br />
+    <p>
+        The World Happiness Report is a dataset that includes information about a
+        country's happiness in a certain year (In this case 2016). This dataset is the main way
+        to see how does the internet affect the world happiness. The happiness score is built from
+        seven variables: Economy, Social Support, Health, Freedom, Trust, Generosity and Dystopia Residual.
+        In the year 2016, The happiest country in the world is Denmark, and the least happy one is Burundi.
+        Fun fact: Israel is ranked in the 11th spot, which is above countries like the UK, the United States,
+        and a lot more. I took the dataset from the website <a href="https://kaggle.com" class="externalLink" target="_blank">kaggle</a>, but the data
+        is originally from <a href="https://worldhappiness.report" class="externalLink" target="_blank">The World Happiness Report </a> website, where
+        you can find a lot more information about how the data was collected and different Happiness Reports from previous years.
 
-        </p>
+    </p>
 
-        <br />
+    <br />
 
-        <div class="divTable" id="divDataFields">
-            <div class="divRow" id="divHeader">
-                <div class="divCell">Column</div>
-                <div class="divCell">Explanation</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Country</div>
-                <div class="divCell">Name of the country</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Region</div>
-                <div class="divCell">Region the country belongs to</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Happiness Rank</div>
-                <div class="divCell">Rank of the country based on the Happiness Score</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Happiness Score</div>
-                <div class="divCell">Overall country's <abbr title="Measured in 2016 by measuring the national average of the question: 'How would you rate your happiness on a scale of 0 to 10'">happiness score</abbr></div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Economy (GDP per Capita)</div>
-                <div class="divCell">The amount of Happiness Score that the economy contributes</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Social Support</div>
-                <div class="divCell">The amount of Happiness Score <abbr title="The ability to relay on other people for support in times of need">social support</abbr> contributes</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Health (Life Expectancy)</div>
-                <div class="divCell">The amount of Happiness Score that life expectancy contributes</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Freedom</div>
-                <div class="divCell">The amount of Happiness Score that freedom in the country contributes </div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Trust (Government Corruption)</div>
-                <div class="divCell">The amount of Happiness Score that trust in the goverment contributes</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Generosity</div>
-                <div class="divCell">The amount of Happiness Score that generosity contributes</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">Dystopia Residual</div>
-                <div class="divCell">The amount of Happiness Score that the <abbr title="A Dystopia is an imaginary country that has the world's least happy people. Each year a Dystopia Happiness Score is established by combining all of the lowest stats together (Lowest incomes, lowest life expectancy, lowest generosity, most corruption, least freedom, and least social support). Dystopia Residual is calculated by adding the Dystopia Happiness Score to the changes in all stats from the previous year">Dystopia Residual</abbr> contributes</div>
-            </div>
+    <div class="divTable" id="divDataFields">
+        <div class="divRow" id="divHeader">
+            <div class="divCell">Column</div>
+            <div class="divCell">Explanation</div>
         </div>
-
-        <button data-target="#collapse" data-toggle="collapse" class="btn btn-default" id="buttonDataset">Dataset</button>
-
-        <div id="collapse" class="collapse">
-            {{ raw_data_table | safe}}
+        <div class="divRow">
+            <div class="divCell">Country</div>
+            <div class="divCell">Name of the country</div>
         </div>
-
-
-
+        <div class="divRow">
+            <div class="divCell">Region</div>
+            <div class="divCell">Region the country belongs to</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Happiness Rank</div>
+            <div class="divCell">Rank of the country based on the Happiness Score</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Happiness Score</div>
+            <div class="divCell">Overall country's <abbr title="Measured in 2016 by measuring the national average of the question: 'How would you rate your happiness on a scale of 0 to 10'">happiness score</abbr></div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Economy (GDP per Capita)</div>
+            <div class="divCell">The amount of Happiness Score that the economy contributes</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Social Support</div>
+            <div class="divCell">The amount of Happiness Score <abbr title="The ability to relay on other people for support in times of need">social support</abbr> contributes</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Health (Life Expectancy)</div>
+            <div class="divCell">The amount of Happiness Score that life expectancy contributes</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Freedom</div>
+            <div class="divCell">The amount of Happiness Score that freedom in the country contributes </div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Trust (Government Corruption)</div>
+            <div class="divCell">The amount of Happiness Score that trust in the goverment contributes</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Generosity</div>
+            <div class="divCell">The amount of Happiness Score that generosity contributes</div>
+        </div>
+        <div class="divRow">
+            <div class="divCell">Dystopia Residual</div>
+            <div class="divCell">The amount of Happiness Score that the <abbr title="A Dystopia is an imaginary country that has the world's least happy people. Each year a Dystopia Happiness Score is established by combining all of the lowest stats together (Lowest incomes, lowest life expectancy, lowest generosity, most corruption, least freedom, and least social support). Dystopia Residual is calculated by adding the Dystopia Happiness Score to the changes in all stats from the previous year">Dystopia Residual</abbr> contributes</div>
+        </div>
     </div>
+
+    <!--Bootstrap Collapse Button-->
+    <button data-target="#collapse" data-toggle="collapse" class="btn btn-default" id="buttonDataset">Dataset</button>
+
+    <div id="collapse" class="collapse">
+        {{ raw_data_table | safe}}
+    </div>
+
+
+</div>
 
 
 
