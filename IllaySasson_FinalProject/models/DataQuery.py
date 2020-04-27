@@ -26,7 +26,7 @@ def PlotToIMG(fig):
     return pngImageB64String
 
 
-#Returns a list of the countries the user selected
+#Returns a list of all available countries in the dataset
 def GetCountriesChoice(df):
     df = df.rename(columns={'Country': 'Country'})
     df = df.groupby('Country').sum()

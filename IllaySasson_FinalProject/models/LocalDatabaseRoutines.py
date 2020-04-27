@@ -34,7 +34,7 @@ class LocalDatabaseServiceRoutines(object):
         df = df.set_index('username')
         return (UserName in df.index.values)
 
-    #Check if the username and password pair exist in the users dataset (Returns a boolean)
+    #Checks if the username and password pair exist in the users dataset (Returns a boolean)
     def IsLoginGood(self, UserName, Password):
         df = self.ReadCSVUsersDB()
         df=df.reset_index()
